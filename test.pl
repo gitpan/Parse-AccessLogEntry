@@ -6,7 +6,7 @@
 # change 'tests => 1' to 'tests => last_test_to_print';
 
 use Test;
-BEGIN { plan tests => 2 };
+BEGIN { plan tests => 3 };
 use Parse::AccessLogEntry;
 ok(1); # If we made it this far, we're ok.
 
@@ -15,6 +15,7 @@ ok(1); # If we made it this far, we're ok.
 # Insert your test code below, the Test module is use()ed here so read
 # its man page ( perldoc Test ) for help writing this test script.
 
+use Data::Dumper;
 my $P=Parse::AccessLogEntry::new();
 my $Line='1.2.3.4 - - [14/Aug/2002:06:53:08 -0600] "GET /test.html HTTP/1.1" 200 2700 "http://www.securelevel.com" "Mozilla/4.0 (compatible)"';
 my $Ref=$P->parse($Line);

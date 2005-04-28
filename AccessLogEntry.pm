@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 require Exporter;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 sub new
 {
@@ -30,7 +30,7 @@ sub parse
         $Ref->{time}=$Ds2[1];
         if ($Rest)
         {
-                ($Ref->{rtype},$Ref->{file},$Ref->{proto},$Ref->{code},$Ref->{bytes},$R2)=split(/\s+/,$Rest,6);
+                ($Ref->{rtype},$Ref->{file},$Ref->{proto},$Ref->{code},$Ref->{bytes},$R2)=split(/\s/,$Rest,6);
 		$Ref->{rtype}=~tr/\"//d;
 		$Ref->{proto}=~tr/\"//d;
                 if ($R2)
@@ -97,7 +97,7 @@ know.
 
 =head1 AUTHOR
 
-Marc Slagle - marc.slagle@securelevel.com
+Marc Slagle - marc.slagle@online-rewards.com
 
 =head1 SEE ALSO
 
